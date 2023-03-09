@@ -20,30 +20,29 @@ if(empty($params['LANGUAGE'])){
     throw new Exception("ERROR - Parameter not found (LANGUAGE)", 1);
 }
 if(!in_array($params['LANGUAGE'], ['EN','ES','FR','LATIN'])){
-    throw new Exception("ERROR - Parameter not valid (LANGUAGE)", 1);
+    throw new Exception('ERROR - Parameter not valid (LANGUAGE)', 1);
 }
 
 if(empty($params['MODE'])){
-    throw new Exception("ERROR - Parameter not found (MODE)", 1);
+    throw new Exception('ERROR - Parameter not found (MODE)', 1);
 }
 if(!in_array($params['MODE'], ['M1','M2','M3','M4'])){
-    throw new Exception("ERROR - Parameter not valid (MODE)", 1);
+    throw new Exception('ERROR - Parameter not valid (MODE)', 1);
 }
-
 
 try {
 
     // Decoding dictionary setup
-    $file_handle = fopen("./words_en.txt", "r");
+    $file_handle = fopen('./dictionaries/words_'.$params['LANGUAGE'].'.txt', 'r');
     if(!$file_handle) {
-        throw new Exception("Error opening dictionary", 1);
+        throw new Exception('Error opening dictionary', 1);
     }
 
     $aDICTIONARY = [];
     $aDBLSAMECHARSTART = [];
     while (!feof($file_handle)) {
 
-        $line = str_replace([chr(10),chr(13)], '', trim(mb_convert_encoding(fgets($file_handle), 'UTF-8', "ISO-8859-1")));
+        $line = str_replace([chr(10),chr(13)], '', trim(mb_convert_encoding(fgets($file_handle), 'UTF-8', 'ISO-8859-1')));
         $line_len = strlen($line);
 
         if($line_len == 0){
@@ -82,7 +81,7 @@ try {
     fclose($file_handle);
 
 } catch (\Throwable $th) {
-    $aRESULTs["status"] = 'KO';
+    $aRESULTs['status'] = 'KO';
     $aRESULTs['error_msg'] = 'Caught Throwable: ' . $th->getMessage();
     $aRESULTs['error_line'] = $th->getLine();
 }
@@ -91,9 +90,9 @@ try {
 $end_time = microtime(true);
 $timediff = $end_time - $start_time;
 
-$aRESULTs["dictionary_selected"] = $end_time;
-$aRESULTs["microtime_end"] = $end_time;
-$aRESULTs["elapsed_time"] = sprintf('%0.2f', $timediff);
+$aRESULTs['dictionary_selected'] = $end_time;
+$aRESULTs['microtime_end'] = $end_time;
+$aRESULTs['elapsed_time'] = sprintf('%0.2f', $timediff);
 
 header('Content-Type: application/json;');
 echo json_encode($aRESULTs);
