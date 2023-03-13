@@ -31,6 +31,11 @@ if(!in_array($params['MODE'], ['M1','M2','M3','M4'])){
     throw new Exception('ERROR - Parameter not valid (MODE)', 1);
 }
 
+if(empty($params['CHECK_ONLY_DICTIONARY'])){
+    $params['CHECK_ONLY_DICTIONARY'] = 'N';
+}
+
+
 try {
 
     // Decoding dictionary setup
@@ -40,6 +45,7 @@ try {
     }
 
     $aDICTIONARY = [];
+    $dictionary_size = 0;
     $aDBLSAMECHARSTART = [];
     while (!feof($file_handle)) {
 
@@ -70,12 +76,14 @@ try {
                 continue;
             }
 
+            $dictionary_size++;
+
             $key = 'WRD_'.$line_len;
             if(empty($aDICTIONARY[$key])){
                 $aDICTIONARY[$key] = [];
             }
 
-            $line = strtoupper($line);
+            // $line = strtoupper($line);
 
             $aDICTIONARY[$key][] = $line;
 
@@ -120,70 +128,253 @@ try {
 
     $aPHRASEs = [];
 
-    //Word 7 - Position 6 in $aWORD array
-    foreach($aDICTIONARY['WRD_3'] as $key_3_L0 => $aWORD_CHAR_3_L0){
+    if($params['CHECK_ONLY_DICTIONARY'] == 'Y'){
 
-        $valid = false;
+    }else{
+        if($params['MODE'] == 'M1'){
 
-        $aWORD = ['','','','','','','','','','','','','','',''];  // Initialize an array just slightly larger than I expect to use
+            //Word 2 - Position 1 in $aWORD array
+            foreach($aDICTIONARY['WRD_4'] as $key_4_L0 => $aWORD_CHAR_4_L0){
 
-        $aSYMBOLs["SYMB_19"]['value'] = substr($aWORD_CHAR_3_L0, 0, 1); //Single dot
-        $aSYMBOLs["SYMB_04"]['value'] = substr($aWORD_CHAR_3_L0, 1, 1); //Circle crossed out diagonally
-        $aSYMBOLs["SYMB_09"]['value'] = substr($aWORD_CHAR_3_L0, 2, 1); //Two overlapping points
+                $valid = false;
 
-        $aWORD_6 = $aWORD_CHAR_3_L0;
+                $aWORD = ['','','','','','','','','','','','','','',''];  // Initialize an array just slightly larger than I expect to use
 
-        //Word 8
-        foreach($aDICTIONARY['WRD_4'] as $key_4_L1 => $aWORD_CHAR_4_L1){
+                if(
+                    substr($aWORD_CHAR_4_L0, 1, 1) == substr($aWORD_CHAR_4_L0, 2, 1)
+                ){
 
-            $selector = 'SYMB_04';
-            if(empty( $aSYMBOLs[$selector]['value'] )){
-                throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L0, 21);
-            }
-            $selector = 'SYMB_09';
-            if(empty( $aSYMBOLs[$selector]['value'] )){
-                throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L0, 22);
-            }
+                    $aSYMBOLs["SYMB_01"]['value'] = substr($aWORD_CHAR_4_L0, 0, 1); //Triangle pointing down
+                    $aSYMBOLs["SYMB_09"]['value'] = substr($aWORD_CHAR_4_L0, 1, 1); //Two overlapping points
+                    $aSYMBOLs["SYMB_09"]['value'] = substr($aWORD_CHAR_4_L0, 2, 1); //Two overlapping points
+                    $aSYMBOLs["SYMB_05"]['value'] = substr($aWORD_CHAR_4_L0, 3, 1); //Triangle pointing up
 
-            if(substr($aWORD_CHAR_4_L1, 0, 1) == $aSYMBOLs["SYMB_04"]['value'] && substr($aWORD_CHAR_4_L1, 2, 1) == $aSYMBOLs["SYMB_09"]['value']){
-                //Circle crossed out diagonally
-                //Two overlapping points
-
-                $aSYMBOLs["SYMB_14"]['value'] = substr($aWORD_CHAR_4_L1, 1, 1); //Triangle with dots on the edges
-                $aSYMBOLs["SYMB_20"]['value'] = substr($aWORD_CHAR_4_L1, 3, 1); //Tall, narrow rectangle
-
-                $aWORD_7 = $aSYMBOLs["SYMB_08"]['value'] . $aSYMBOLs["SYMB_08"]['value'] .' '. $aWORD_CHAR_4_L1;
-                $valid = true;
+                    $aWORD_1 = $aWORD_CHAR_4_L0;
 
 
-                if($valid){
-                    // $aWORD[1] = $aWORD_1;
-                    // $aWORD[2] = $aWORD_2;
-                    // $aWORD[3] = $aWORD_3;
-                    // $aWORD[4] = $aWORD_4;
-                    $aWORD[6] = $aWORD_6;
-                    $aWORD[7] = $aWORD_7;
+                    //Word 4 - Position 3 in $aWORD array
+                    foreach($aDICTIONARY['WRD_3'] as $key_3_L1 => $aWORD_CHAR_3_L1){
 
-                    $aPHRASEs[] = implode(' ', $aWORD);
+                        $selector = 'SYMB_05';
+                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L0, 1);
+                        }
+
+                        if(
+                            substr($aWORD_CHAR_3_L1, 0, 1) == $aSYMBOLs["SYMB_05"]['value']
+                        ){
+
+                            $aSYMBOLs["SYMB_12"]['value'] = substr($aWORD_CHAR_3_L1, 1, 1); //Square
+                            $aSYMBOLs["SYMB_03"]['value'] = substr($aWORD_CHAR_3_L1, 2, 1); //Percentage
+
+                            $aWORD_3 = $aWORD_CHAR_3_L1;
+
+
+                            //Word 7 - Position 6 in $aWORD array
+                            foreach($aDICTIONARY['WRD_3'] as $key_3_L2 => $aWORD_CHAR_3_L2){
+
+                                $selector = 'SYMB_09';
+                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L0, 2);
+                                }
+
+                                if(
+                                    substr($aWORD_CHAR_3_L2, 2, 1) == $aSYMBOLs["SYMB_09"]['value']
+                                ){
+                                    $aSYMBOLs["SYMB_19"]['value'] = substr($aWORD_CHAR_3_L2, 0, 1); //Single dot
+                                    $aSYMBOLs["SYMB_04"]['value'] = substr($aWORD_CHAR_3_L2, 1, 1); //Circle crossed out diagonally
+
+                                    $aWORD_6 = $aWORD_CHAR_3_L2;
+
+
+                                    //Word 1 - Position 0 in $aWORD array
+                                    foreach($aDICTIONARY['WRD_6'] as $key_6_L3 => $aWORD_CHAR_6_L3){
+
+                                        $selector = 'SYMB_01';
+                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L2, 3);
+                                        }
+
+                                        $selector = 'SYMB_03';
+                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L2, 4);
+                                        }
+
+                                        $selector = 'SYMB_04';
+                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L2, 5);
+                                        }
+
+                                        $selector = 'SYMB_05';
+                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_3_L2, 6);
+                                        }
+
+                                        if(
+                                                substr($aWORD_CHAR_6_L3, 0, 1) == $aSYMBOLs["SYMB_01"]['value']
+                                            &&  substr($aWORD_CHAR_6_L3, 2, 1) == $aSYMBOLs["SYMB_03"]['value']
+                                            &&  substr($aWORD_CHAR_6_L3, 3, 1) == $aSYMBOLs["SYMB_04"]['value']
+                                            &&  substr($aWORD_CHAR_6_L3, 4, 1) == $aSYMBOLs["SYMB_05"]['value']
+                                        ){
+                                            $aSYMBOLs["SYMB_02"]['value'] = substr($aWORD_CHAR_6_L3, 1, 1); //Triangle with downward pointing crossed out
+                                            $aSYMBOLs["SYMB_06"]['value'] = substr($aWORD_CHAR_6_L3, 5, 1); //Down arrow to the left
+
+                                            $aWORD_0 = $aWORD_CHAR_6_L3;
+
+
+                                            //Word 3 - Position 2 in $aWORD array
+                                            foreach($aDICTIONARY['WRD_4'] as $key_4_L4 => $aWORD_CHAR_4_L4){
+
+                                                $selector = 'SYMB_09';
+                                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_6_L3, 7);
+                                                }
+
+                                                $selector = 'SYMB_12';
+                                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_6_L3, 8);
+                                                }
+
+                                                if(
+                                                        substr($aWORD_CHAR_4_L4, 0, 1) == $aSYMBOLs["SYMB_09"]['value']
+                                                    &&  substr($aWORD_CHAR_4_L4, 3, 1) == $aSYMBOLs["SYMB_12"]['value']
+                                                ){
+                                                    $aSYMBOLs["SYMB_10"]['value'] = substr($aWORD_CHAR_4_L4, 2, 1); //C
+                                                    $aSYMBOLs["SYMB_11"]['value'] = substr($aWORD_CHAR_4_L4, 3, 1); //X
+
+                                                    $aWORD_2 = $aSYMBOLs["SYMB_08"]['value'] .' '. $aWORD_CHAR_4_L4;
+
+
+                                                    //Word 5 - Position 4 in $aWORD array
+                                                    foreach($aDICTIONARY['WRD_6'] as $key_6_L5 => $aWORD_CHAR_6_L5){
+
+                                                        $selector = 'SYMB_10';
+                                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L4, 10);
+                                                        }
+
+                                                        $selector = 'SYMB_03';
+                                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L4, 11);
+                                                        }
+
+                                                        $selector = 'SYMB_11';
+                                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L4, 12);
+                                                        }
+
+                                                        if(
+                                                                substr($aWORD_CHAR_6_L5, 1, 1) == $aSYMBOLs["SYMB_10"]['value']
+                                                            &&  substr($aWORD_CHAR_6_L5, 2, 1) == $aSYMBOLs["SYMB_10"]['value']
+                                                            &&  substr($aWORD_CHAR_6_L5, 4, 1) == $aSYMBOLs["SYMB_03"]['value']
+                                                            &&  substr($aWORD_CHAR_6_L5, 5, 1) == $aSYMBOLs["SYMB_11"]['value']
+                                                        ){
+                                                            $aSYMBOLs["SYMB_14"]['value'] = substr($aWORD_CHAR_6_L5, 0, 1); //Triangle with dots on the edges
+
+                                                            $aWORD_4 = $aSYMBOLs["SYMB_13"]['value'] .' '. $aWORD_CHAR_6_L5;
+
+
+                                                            //Word 8 - Position 7 in $aWORD array
+                                                            foreach($aDICTIONARY['WRD_4'] as $key_4_L6 => $aWORD_CHAR_4_L6){
+
+                                                                $selector = 'SYMB_04';
+                                                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_6_L5, 13);
+                                                                }
+
+                                                                $selector = 'SYMB_14';
+                                                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_6_L5, 14);
+                                                                }
+
+                                                                $selector = 'SYMB_09';
+                                                                if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                                    throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_6_L5, 15);
+                                                                }
+
+                                                                if(
+                                                                        substr($aWORD_CHAR_4_L6, 0, 1) == $aSYMBOLs["SYMB_04"]['value']
+                                                                    &&  substr($aWORD_CHAR_4_L6, 1, 1) == $aSYMBOLs["SYMB_14"]['value']
+                                                                    &&  substr($aWORD_CHAR_4_L6, 2, 1) == $aSYMBOLs["SYMB_09"]['value']
+                                                                ){
+                                                                    $aSYMBOLs["SYMB_20"]['value'] = substr($aWORD_CHAR_4_L6, 3, 1); //Tall, narrow rectangle
+
+                                                                    $aWORD_7 = $aSYMBOLs["SYMB_08"]['value'] . $aSYMBOLs["SYMB_08"]['value'] .' '. $aWORD_CHAR_4_L6;
+
+                                                                    //Word 6 - Position 5 in $aWORD array
+                                                                    foreach($aDICTIONARY['WRD_6'] as $key_6_L7 => $aWORD_CHAR_6_L7){
+
+                                                                        $selector = 'SYMB_03';
+                                                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L6, 16);
+                                                                        }
+
+                                                                        $selector = 'SYMB_11';
+                                                                        if(empty( $aSYMBOLs[$selector]['value'] )){
+                                                                            throw new Exception("Empty selector value - $selector: ".$aWORD_CHAR_4_L6, 17);
+                                                                        }
+
+                                                                        if(
+                                                                                substr($aWORD_CHAR_6_L7, 1, 1) == $aSYMBOLs["SYMB_03"]['value']
+                                                                            &&  substr($aWORD_CHAR_6_L7, 3, 1) == $aSYMBOLs["SYMB_11"]['value']
+                                                                        ){
+                                                                            $aSYMBOLs["SYMB_15"]['value'] = substr($aWORD_CHAR_4_L6, 3, 1); //Horizontally crossed circle
+                                                                            $aSYMBOLs["SYMB_16"]['value'] = substr($aWORD_CHAR_4_L6, 3, 1); //Plus
+                                                                            $aSYMBOLs["SYMB_17"]['value'] = substr($aWORD_CHAR_4_L6, 3, 1); //Trapeze
+                                                                            $aSYMBOLs["SYMB_18"]['value'] = substr($aWORD_CHAR_4_L6, 3, 1); //Circle with dot in the middle
+
+                                                                            $aWORD_5 = $aWORD_CHAR_4_L6;
+
+                                                                            $aWORD[0] = $aWORD_0;
+                                                                            $aWORD[1] = $aWORD_1;
+                                                                            $aWORD[2] = $aWORD_2;
+                                                                            $aWORD[3] = $aWORD_3;
+                                                                            $aWORD[4] = $aWORD_4;
+                                                                            $aWORD[5] = $aWORD_5;
+                                                                            $aWORD[6] = $aWORD_6;
+                                                                            $aWORD[7] = $aWORD_7;
+
+                                                                            if(!in_array(trim(implode(' ', $aWORD)), $aPHRASEs)){
+                                                                                $aPHRASEs[] = trim(implode(' ', $aWORD));
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
+
+        }else if($params['MODE'] == 'M2'){
+
         }
     }
 
     $aRESULTs['data'] = $aPHRASEs;
 
-
 } catch (\Throwable $th) {
     $aRESULTs['status'] = 'KO';
     $aRESULTs['error_msg'] = 'Caught Throwable: ' . $th->getMessage();
     $aRESULTs['error_line'] = $th->getLine();
+    $aRESULTs['error_code'] = $th->getCode();
 }
 
 
 $end_time = microtime(true);
 $timediff = $end_time - $start_time;
 
-$aRESULTs['dictionary_selected'] = $end_time;
+$aRESULTs['dictionary_selected'] = $params['LANGUAGE'];
+$aRESULTs['dictionary_size'] = $dictionary_size;
+$aRESULTs['phrases_count'] = count($aPHRASEs);
 $aRESULTs['microtime_end'] = $end_time;
 $aRESULTs['elapsed_time'] = sprintf('%0.2f', $timediff);
 
