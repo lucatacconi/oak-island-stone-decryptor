@@ -1,0 +1,18 @@
+{
+    "name": "lucatacconi/oak-island-stone-decryptor",
+    "description": "PHP code made for fun to try to decode the Oak Island 90 foot table",
+    "type": "project",
+    "keywords": [
+        "Oak Island", "Treasure", "Hunt", "90-Foot Stone", "Decryptor"
+    ],
+    "homepage": "https://github.com/lucatacconi/oak-island-stone-decryptor/tree/master",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luca Tacconi",
+            "email": "luca.tacconi@monolite.net",
+            "homepage": "http://www.monolite.net",
+            "role": "Developer"
+        }
+    ]
+}

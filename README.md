@@ -1,1 +1,0 @@
-# oak-island-stone-decryptor
