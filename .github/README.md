@@ -6,6 +6,12 @@
 [![License](https://poser.pugx.org/lucatacconi/oak-island-stone-decryptor/license)](https://packagist.org/packages/lucatacconi/oak-island-stone-decryptor)
 
 
+## Oak Island mistery
+
+
+
+
+
 
 <!-- https://github.com/dwyl/english-words
 
@@ -18,4 +24,24 @@ https://www.pallier.org/liste-de-mots-francais.html
 https://github.com/lorenbrichter/Words -->
 
 
-lucatacconi/oak-island-stone-decryptor
+
+
+
+
+## System Requirements
+
+* Linux OS and Bash shell
+* Apache and PHP 7.4 or newer, with rewrite.load module enabled
+* Composer
+* Sudo capabilities
+
+
+### Composer setup
+
+It's recommended that you use [Composer](https://getcomposer.org/) to install Oak Island 90 feet stone decryptor.
+
+Starting from your **Apache Server**'s **Document Root** folder or from a directory served by a virtual host, begin the application setup by Composer command:
+```
+composer create-project lucatacconi/oak-island-stone-decryptor
+```
+This will install the stone decryptor and all required dependencies.
