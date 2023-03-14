@@ -1,4 +1,4 @@
-# oak-island-stone-decryptor
+# Oak Island 90 feet stone decryptor
 
 
 https://github.com/dwyl/english-words
