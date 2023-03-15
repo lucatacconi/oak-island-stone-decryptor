@@ -12,6 +12,11 @@
 
 
 
+![Oak Island 90 feet inscribed stone](https://user-images.githubusercontent.com/9921890/225243481-ab78abc2-4c37-44d8-a056-9d291efcac6e.png)
+
+
+
+
 
 <!-- https://github.com/dwyl/english-words
 
@@ -51,3 +56,16 @@ This will install the stone decryptor and all required dependencies.
 ### Usage
 
 http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1
+
+## Contributing
+
+This project is maintained by a group of awesome contributors. Contributions are extremely welcome :heart:.
+Please see [Contributing informations](CONTRIBUTING.md) for details.
+
+## Credits
+
+* [Luca Tacconi](https://github.com/lucatacconi)
+
+## License
+
+**Oak Island 90 feet stone decryptor** is licensed under the MIT license. See [License File](LICENSE.md) for more information.
