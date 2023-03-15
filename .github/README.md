@@ -42,19 +42,31 @@ Here are the assumptions we worked on:
 
 A big thank you to the following Github and non-Github repositories from which we got the word list of the languages ​​we chose for the project:
 
-* ![Github Dwyl/english-words](https://github.com/dwyl/english-words/)
-* ![Github Bbloomf/verbalatina](https://github.com/bbloomf/verbalatina/)
-* ![Nurykabe.com ](http://www.nurykabe.com/dump/text/lists/)
-* ![Pallier.org - liste-de-mots-francais](https://www.pallier.org/liste-de-mots-francais.html)
-* ![Github Lorenbrichter/Words](https://github.com/lorenbrichter/Words/)
+* [Github Dwyl/english-words](https://github.com/dwyl/english-words/)
+* [Github Bbloomf/verbalatina](https://github.com/bbloomf/verbalatina/)
+* [Nurykabe.com ](http://www.nurykabe.com/dump/text/lists/)
+* [Pallier.org - liste-de-mots-francais](https://www.pallier.org/liste-de-mots-francais.html)
+* [Github Lorenbrichter/Words](https://github.com/lorenbrichter/Words/)
 
 > :warning: **This study has no scientific value and I have no presumption of being anything other than entertainment.**
 
+## Dictionary attack mode
+
+Below are the different methods of launching the analysis on the text of the stone:
+
+### Method 1 - M1
+
+![Method 1 - M1](https://user-images.githubusercontent.com/9921890/225400911-0d5fc254-f8d5-4a4a-a19b-bd58e4546607.png)
+
+
+
+
+
 ## System Requirements
 
-* PHP 7.4 or newer
-* Lua 5.3 or newer
-* Dart 2.12 or newer
+* PHP 7.4 or newer if you want to use the PHP version
+* Lua 5.3 or newer if you want to use the Lua version
+* Dart 2.12 or newer if you want to use the Dart version
 * Composer
 
 
