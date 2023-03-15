@@ -42,11 +42,11 @@ Here are the assumptions we worked on:
 
 A big thank you to the following Github and non-Github repositories from which we got the word list of the languages ​​we chose for the project:
 
-* ![https://github.com/dwyl/english-words](https://github.com/dwyl/english-words)
-* ![https://github.com/bbloomf/verbalatina](https://github.com/bbloomf/verbalatina)
-* ![http://www.nurykabe.com/dump/text/lists/](http://www.nurykabe.com/dump/text/lists/)
-* ![https://www.pallier.org/liste-de-mots-francais.html](https://www.pallier.org/liste-de-mots-francais.html)
-* ![https://github.com/lorenbrichter/Words](https://github.com/lorenbrichter/Words)
+* ![ Github Dwyl/english-words ](https://github.com/dwyl/english-words)
+* ![ Github Bbloomf/verbalatina ](https://github.com/bbloomf/verbalatina)
+* ![ Nurykabe.com ](http://www.nurykabe.com/dump/text/lists/)
+* ![ Pallier.org - liste-de-mots-francais ](https://www.pallier.org/liste-de-mots-francais.html)
+* ![ Github Lorenbrichter/Words ](https://github.com/lorenbrichter/Words)
 
 > :warning: **This study has no scientific value and I have no presumption of being anything other than entertainment.**
 
@@ -77,10 +77,9 @@ http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M
 
 ## Contributing
 
-
-
-This project is maintained by a group of awesome contributors. Contributions are extremely welcome :heart:.
-Please see [Contributing informations](CONTRIBUTING.md) for details.
+The project was born as a game and to practice learning Dart and Lua. I would also like it to become a starting point for sharing ideas and discussing with other developers or interested parties.
+Anyone interested can write me here [Luca Tacconi](luca.tacconi@monolite.net) or open an issue on the repository.
+Contributions are extremely welcome :heart:.
 
 ## Credits
 
