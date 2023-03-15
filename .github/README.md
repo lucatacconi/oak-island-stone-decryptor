@@ -10,6 +10,10 @@
 
 ![Oak Island](https://user-images.githubusercontent.com/9921890/225240434-ab2da47a-e858-43d1-8742-242f97bbcf93.jpg)
 
+For those who don't know anything about Oak Island, legend tell us that a deep well was dug on the island and that a great treasure was buried there. The story of the well has its roots in stories that trace the first excavation attempts back to 1795, when the young Daniel McGinnis (1777-1862), while walking, was intrigued by a depression in the ground located near an old oak tree, among the branches of which a hoist stood out, a sort of pulley also used on ships.
+
+The next day Daniel, in the company of two friends familiar with ancient local legends about pirates and hidden treasures, began the excavations. But they soon realized that that depression hid a very particular well. Going deeper, every three meters they found a platform of oak wood planks but, having reached the third layer, they were forced to abandon the enterprise, which was too difficult for them. Thus was born the legend of Oak Island. That well took the name of Money Pit, the well of money.
+
 
 
 ![Oak Island 90 feet inscribed stone](https://user-images.githubusercontent.com/9921890/225243481-ab78abc2-4c37-44d8-a056-9d291efcac6e.png)
