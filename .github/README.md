@@ -8,7 +8,7 @@
 
 ## Oak Island mistery
 
-
+![Oak Island](https://user-images.githubusercontent.com/9921890/225240434-ab2da47a-e858-43d1-8742-242f97bbcf93.jpg)
 
 
 
@@ -45,3 +45,9 @@ Starting from your **Apache Server**'s **Document Root** folder or from a direct
 composer create-project lucatacconi/oak-island-stone-decryptor
 ```
 This will install the stone decryptor and all required dependencies.
+
+
+
+### Usage
+
+http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1
