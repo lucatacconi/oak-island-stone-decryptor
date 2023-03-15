@@ -146,13 +146,11 @@ The project was born as a game and to practice learning Dart and Lua. I would al
 Anyone interested can write me here [Luca Tacconi](mailto:luca.tacconi@monolite.net) or open an issue on the repository.
 Contributions are extremely welcome :heart:.
 
-<br />
 
 ## Credits
 
 * [Luca Tacconi](https://github.com/lucatacconi)
 
-<br />
 
 ## License
 
