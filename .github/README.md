@@ -42,11 +42,11 @@ Here are the assumptions we worked on:
 
 A big thank you to the following Github and non-Github repositories from which we got the word list of the languages ​​we chose for the project:
 
-* ![ Github Dwyl/english-words ](https://github.com/dwyl/english-words)
-* ![ Github Bbloomf/verbalatina ](https://github.com/bbloomf/verbalatina)
-* ![ Nurykabe.com ](http://www.nurykabe.com/dump/text/lists/)
-* ![ Pallier.org - liste-de-mots-francais ](https://www.pallier.org/liste-de-mots-francais.html)
-* ![ Github Lorenbrichter/Words ](https://github.com/lorenbrichter/Words)
+* ![Github Dwyl/english-words](https://github.com/dwyl/english-words/)
+* ![Github Bbloomf/verbalatina](https://github.com/bbloomf/verbalatina/)
+* ![Nurykabe.com ](http://www.nurykabe.com/dump/text/lists/)
+* ![Pallier.org - liste-de-mots-francais](https://www.pallier.org/liste-de-mots-francais.html)
+* ![Github Lorenbrichter/Words](https://github.com/lorenbrichter/Words/)
 
 > :warning: **This study has no scientific value and I have no presumption of being anything other than entertainment.**
 
