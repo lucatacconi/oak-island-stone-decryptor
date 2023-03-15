@@ -58,7 +58,15 @@ Below are the different methods of launching the analysis on the text of the sto
 
 ![Method 1 - M1](https://user-images.githubusercontent.com/9921890/225400911-0d5fc254-f8d5-4a4a-a19b-bd58e4546607.png)
 
+Here are the assumptions we worked on in Method 1:
 
+* at the beginning of word 8 there are two symbols in the shape of a cross (Symb_08). In the languages ​​considered, there are no words that begin with the same repeated letter. So let's try to consider them as numbers and assign them a random numeric value.
+* by resemblance I also consider the first symbol of the word 5 as a number (Symb_13). We assign it a random numeric value.
+* we consider the third symbol of the word 6 as a plus-shaped symbol and not as a cross-shaped symbol, therefore with content other than Symb_08
+* we consider word 2 composed of 4 symbols, two of which are repeated at position 2 and 3 (both Symb_09)
+
+Here's how the word parsing goes:
+Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 
 
 
