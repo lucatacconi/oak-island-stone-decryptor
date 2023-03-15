@@ -69,31 +69,32 @@ Here's how the word parsing goes:
 Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 
 
-
 ## System Requirements
 
 * PHP 7.4 or newer if you want to use the PHP version
 * Lua 5.3 or newer if you want to use the Lua version
 * Dart 2.12 or newer if you want to use the Dart version
-* Composer
+* Apache or Nginx server if you want to use application by web browser
+* Composer if you want to install the application by Composer
 
 
 
-### Composer setup
+## Application installation
 
-It's recommended that you use [Composer](https://getcomposer.org/) to install Oak Island 90 feet stone decryptor.
-
-Starting from your **Apache Server**'s **Document Root** folder or from a directory served by a virtual host, begin the application setup by Composer command:
+To install the application you can download the Github repository or use [Composer](https://getcomposer.org/) with the following instruction:
 ```
 composer create-project lucatacconi/oak-island-stone-decryptor
 ```
-This will install the stone decryptor and all required dependencies.
+
+If you want to use the application via web browser, you also need to install an Http server. Since the execution of the batch could take many minutes it will be necessary to configure the max execution time of php to a high value.
 
 
+## Usage
 
-### Usage
+### PHP usage
 
 http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1
+
 
 ## Contributing
 
