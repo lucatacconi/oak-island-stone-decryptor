@@ -112,7 +112,6 @@ php ./decryptor_v01.php --language=FR --mode=M1
 The outcome of the upload will be entered in ./results/outcome.log in JSON format
 
 <br />
-<br />
 
 ### PHP usage by shell
 
@@ -128,7 +127,6 @@ http://SERVER_HOST/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE
 
 **LOG_FILE** parameter is optional and can be **Y** to save the outcome also in ./results/outcome.log in JSON format as well as displayed on the browser always in JSON format; **N** to not save the outcome in log file and display only on the browser in JSON format.
 
-<br />
 <br />
 
 ### LUA usage
