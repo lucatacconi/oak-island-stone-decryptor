@@ -87,14 +87,49 @@ composer create-project lucatacconi/oak-island-stone-decryptor
 ```
 
 If you want to use the application via web browser, you also need to install an Http server. Since the execution of the batch could take many minutes it will be necessary to configure the max execution time of php to a high value.
+```
+max_execution_time = 100000
+```
 
 
 ## Usage
 
-### PHP usage
+Below is the list of available launch modes:
 
-http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1
 
+With PHP it is possible to launch the application in batch mode or from the browser.
+
+### PHP usage by shell
+
+In batch mode you can launch the application as follows:
+```
+php ./decryptor_v01.php --language=FR --mode=M1
+```
+**language** parameter can be **EN** to load the English dictionary, **FR** to load the French dictionary, **ES** to load the Spanish dictionary and **LAT** to load the Latin dictionary.
+
+**MODE** parameter represents the algorithm with which the cryptogram is analyzed.
+
+The outcome of the upload will be entered in ./results/outcome.log in JSON format
+
+
+### PHP usage by shell
+
+To launch the application from the browser, enter the following address in the browser:
+```
+http://SERVER_HOST/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1[[&LOG_FILE=Y]]
+```
+**SERVER_HOST** is the address of the server where the application is installed or the localhost address if you are using a local server.
+
+**LANGUAGE** parameter can be **EN** to load the English dictionary, **FR** to load the French dictionary, **ES** to load the Spanish dictionary and **LAT** to load the Latin dictionary.
+
+**MODE** parameter represents the algorithm with which the cryptogram is analyzed.
+
+**LOG_FILE** parameter is optional and can be **Y** to save the outcome also in ./results/outcome.log in JSON format as well as displayed on the browser always in JSON format; **N** to not save the outcome in log file and display only on the browser in JSON format.
+
+
+### LUA usage
+
+Cooming soon
 
 ## Contributing
 

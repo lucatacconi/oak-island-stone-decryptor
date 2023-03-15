@@ -6,14 +6,40 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-//Star time
-$start_time = microtime(true);
-
 $params = array_merge($_GET,$_POST);
 $params = array_change_key_case($params, CASE_UPPER);
 
+
+//Star time
+$start_time = microtime(true);
+
+$language = getopt(null, ["language:"]);
+$mode = getopt(null, ["mode:"]);
+$check_only_dictionary = getopt(null, ["check_only_dictionary:"]);
+$log_file = getopt(null, ["log_file:"]);
+
+if(!empty($language['language'])){
+    $params['LANGUAGE'] = $language['language'];
+    $start_by = 'BATCH';
+}
+if(!empty($mode['mode'])){
+    $params['MODE'] = $mode['mode'];
+    $start_by = 'BATCH';
+}
+if(!empty($check_only_dictionary['check_only_dictionary'])){
+    $params['CHECK_ONLY_DICTIONARY'] = $check_only_dictionary['check_only_dictionary'];
+    $start_by = 'BATCH';
+}else{
+    $start_by = 'BROWSER';
+}
+if(!empty($log_file['log_file'])){
+    $params['LOG_FILE'] = $log_file['log_file'];
+}
+
+
 $aRESULTs = [];
 $aRESULTs['status'] = 'OK';
+$aRESULTs['start_by'] = $start_by;
 $aRESULTs['data'] = [];
 $aRESULTs['microtime_start'] = $start_time;
 
@@ -34,7 +60,9 @@ if(!in_array($params['MODE'], ['M1','M2','M3','M4'])){
 if(empty($params['CHECK_ONLY_DICTIONARY'])){
     $params['CHECK_ONLY_DICTIONARY'] = 'N';
 }
-
+if(empty($params['LOG_FILE'])){
+    $params['LOG_FILE'] = 'N';
+}
 
 try {
 
@@ -129,7 +157,7 @@ try {
     $aPHRASEs = [];
 
     if($params['CHECK_ONLY_DICTIONARY'] == 'Y'){
-
+        //I check only the dictionary
     }else{
         if($params['MODE'] == 'M1'){
 
@@ -377,6 +405,13 @@ $aRESULTs['dictionary_size'] = $dictionary_size;
 $aRESULTs['phrases_count'] = count($aPHRASEs);
 $aRESULTs['microtime_end'] = $end_time;
 $aRESULTs['elapsed_time'] = sprintf('%0.2f', $timediff);
+
+
+if($start_by == 'BATCH' || $params['LOG_FILE'] == 'Y'){
+    $logfile = fopen('./results/outcome.log', 'w') or die("Unable to open log file!");
+    fwrite($logfile, json_encode($aRESULTs));
+    fclose($logfile);
+}
 
 header('Content-Type: application/json;');
 echo json_encode($aRESULTs);
