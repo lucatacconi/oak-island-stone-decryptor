@@ -37,28 +37,24 @@ Here are the assumptions we worked on:
 * some of the symbols are repeated within several elements that we can consider words: this means that, by crossing the letters corresponding to the repeated symbols, we can build a set of possible sentences that correspond to the scheme of the symbols.
 * the engraved rock should be dated between 1400 and 1600. We therefore consider English, French, Spanish and Latin as possible languages.
 * some words begin with a repeating symbol. We can try to imagine that the symbol repeated at the beginning of what could be a sentence are numbers.
+* the code may contain obsolete words that are currently no longer in dictionaries. This could affect the text parsing.
 
 
+A big thank you to the following Github and non-Github repositories from which we got the word list of the languages ​​we chose for the project:
 
-<!-- https://github.com/dwyl/english-words
+* ![https://github.com/dwyl/english-words](https://github.com/dwyl/english-words)
+* ![https://github.com/bbloomf/verbalatina](https://github.com/bbloomf/verbalatina)
+* ![http://www.nurykabe.com/dump/text/lists/](http://www.nurykabe.com/dump/text/lists/)
+* ![https://www.pallier.org/liste-de-mots-francais.html](https://www.pallier.org/liste-de-mots-francais.html)
+* ![https://github.com/lorenbrichter/Words](https://github.com/lorenbrichter/Words)
 
-https://github.com/bbloomf/verbalatina
-
-http://www.nurykabe.com/dump/text/lists/
-
-https://www.pallier.org/liste-de-mots-francais.html
-
-https://github.com/lorenbrichter/Words -->
-
-
-> :information_source: This study has no scientific value and I have no presumption of being anything other than entertainment.
-
-
-
+> :warning: **This study has no scientific value and I have no presumption of being anything other than entertainment.**
 
 ## System Requirements
 
 * PHP 7.4 or newer
+* Lua 5.3 or newer
+* Dart 2.12 or newer
 * Composer
 
 
@@ -80,6 +76,8 @@ This will install the stone decryptor and all required dependencies.
 http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M1
 
 ## Contributing
+
+
 
 This project is maintained by a group of awesome contributors. Contributions are extremely welcome :heart:.
 Please see [Contributing informations](CONTRIBUTING.md) for details.
