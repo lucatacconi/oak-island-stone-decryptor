@@ -1,9 +1,9 @@
 {
     "name": "lucatacconi/oak-island-stone-decryptor",
-    "description": "PHP code made for fun to try to decode the Oak Island 90 foot table",
+    "description": "PHP and LUA code made for fun to try to decode the Oak Island 90 feet inscribed stone",
     "type": "project",
     "keywords": [
-        "Oak Island", "Treasure", "Hunt", "90-Foot Stone", "Decryptor"
+        "Oak Island", "Treasure", "Hunt", "90 feet inscribed stone", "Decryptor", "PHP", "Code", "Fun", "Lua", "Dart"
     ],
     "homepage": "https://github.com/lucatacconi/oak-island-stone-decryptor/tree/master",
     "license": "MIT",
