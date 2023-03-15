@@ -78,7 +78,7 @@ http://localhost/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE=M
 ## Contributing
 
 The project was born as a game and to practice learning Dart and Lua. I would also like it to become a starting point for sharing ideas and discussing with other developers or interested parties.
-Anyone interested can write me here [Luca Tacconi](luca.tacconi@monolite.net) or open an issue on the repository.
+Anyone interested can write me here [Luca Tacconi](mailto:luca.tacconi@monolite.net) or open an issue on the repository.
 Contributions are extremely welcome :heart:.
 
 ## Credits
