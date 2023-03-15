@@ -113,7 +113,7 @@ The outcome of the upload will be entered in ./results/outcome.log in JSON forma
 
 <br />
 
-### PHP usage by shell
+### PHP usage by browser
 
 To launch the application from the browser, enter the following address in the browser:
 ```
