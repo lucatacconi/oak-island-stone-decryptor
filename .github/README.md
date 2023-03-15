@@ -17,17 +17,26 @@ The next day Daniel, in the company of two friends familiar with ancient local l
 
 In 1802, a private company, the **Onslow Company**, giving credence to the story of Daniel McGinnis and his companions, resumed excavations. Some layers of charcoal and clay were found but, above all, coconut fibers, which were certainly not local, because the coconut palm does not grow in Canada.
 
-At 90 feet down the morale of the men skyrocketed. They found themselves in front of a huge stone slab that bore indecipherable engravings. It was already night when, probing the ground below with one foot, they felt something resistant. It is said that it was a possible treasure chest, or another slab.
+At 90 feet down the morale of the men skyrocketed. They found themselves in front of a huge stone slab that bore indecipherable engravings, the one that will later be renamed the **90 feet inscribed stone**. It was already night when, probing the ground below with one foot, they felt something resistant. It is said that it was a possible treasure chest, or another slab.
 
 The exhausted workers decided to postpone the discovery until the next day, but a nasty surprise awaited them. During the night the water from the Atlantic had completely flooded the well, and attempts to empty it were in vain: the water level remained constant. It was as if, in order to empty the well, the whole ocean had to be emptied. In fact, there is said to be a conduit of pipes starting under Smith's Cove; when the tide rises the conduit carries water into the Money Pit.
 
 Over the years, about another hundred attempts have been made, which still continue today, also becoming a TV series, where the **Lagina brothers** try to dispel the veil of mystery that hides the island's secrets. However, there is still no trace of the treasure.
 
 
+## The 90 feet inscribed stone
+
+But let's go back a step and go back to the 90-foot stone: legend says the stone featured a series of engraved symbols, broken up into distinct elements that look like words.
+There is also what should be the reproduction of the table and the arrangement of the symbols.
 
 ![Oak Island 90 feet inscribed stone](https://user-images.githubusercontent.com/9921890/225243481-ab78abc2-4c37-44d8-a056-9d291efcac6e.png)
 
+This is where our game begins. Our attempt is to use, for fun, PHP and other latest generation languages ​​(Lua and maybe even Dart) to try an automatic interpretation of the stone.
 
+Here are the assumptions we worked on:
+* some of the symbols are repeated within several elements that we can consider words: this means that, by crossing the letters corresponding to the repeated symbols, we can build a set of possible sentences that correspond to the scheme of the symbols.
+* the engraved rock should be dated between 1400 and 1600. We therefore consider English, French, Spanish and Latin as possible languages.
+* some words begin with a repeating symbol. We can try to imagine that the symbol repeated at the beginning of what could be a sentence are numbers.
 
 
 
@@ -42,16 +51,16 @@ https://www.pallier.org/liste-de-mots-francais.html
 https://github.com/lorenbrichter/Words -->
 
 
+> :information_source: This study has no scientific value and I have no presumption of being anything other than entertainment.
 
 
 
 
 ## System Requirements
 
-* Linux OS and Bash shell
-* Apache and PHP 7.4 or newer, with rewrite.load module enabled
+* PHP 7.4 or newer
 * Composer
-* Sudo capabilities
+
 
 
 ### Composer setup
