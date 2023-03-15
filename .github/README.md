@@ -23,6 +23,7 @@ The exhausted workers decided to postpone the discovery until the next day, but 
 
 Over the years, about another hundred attempts have been made, which still continue today, also becoming a TV series, where the **Lagina brothers** try to dispel the veil of mystery that hides the island's secrets. However, there is still no trace of the treasure.
 
+<br />
 
 ## The 90 feet inscribed stone
 
@@ -50,6 +51,8 @@ A big thank you to the following Github and non-Github repositories from which w
 
 > :warning: **This study has no scientific value and I have no presumption of being anything other than entertainment.**
 
+<br />
+
 ## Dictionary attack mode
 
 Below are the different methods of launching the analysis on the text of the stone:
@@ -68,6 +71,7 @@ Here are the assumptions we worked on in Method 1:
 Here's how the word parsing goes:
 Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 
+<br />
 
 ## System Requirements
 
@@ -77,7 +81,7 @@ Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 * Apache or Nginx server if you want to use application by web browser
 * Composer if you want to install the application by Composer
 
-
+<br />
 
 ## Application installation
 
@@ -91,11 +95,12 @@ If you want to use the application via web browser, you also need to install an 
 max_execution_time = 100000
 ```
 
+<br />
+
 
 ## Usage
 
 Below is the list of available launch modes:
-
 
 With PHP it is possible to launch the application in batch mode or from the browser.
 
@@ -133,15 +138,21 @@ http://SERVER_HOST/oak-island-stone-decryptor/decryptor_v01.php?LANGUAGE=FR&MODE
 
 Cooming soon
 
+<br />
+
 ## Contributing
 
 The project was born as a game and to practice learning Dart and Lua. I would also like it to become a starting point for sharing ideas and discussing with other developers or interested parties.
 Anyone interested can write me here [Luca Tacconi](mailto:luca.tacconi@monolite.net) or open an issue on the repository.
 Contributions are extremely welcome :heart:.
 
+<br />
+
 ## Credits
 
 * [Luca Tacconi](https://github.com/lucatacconi)
+
+<br />
 
 ## License
 
