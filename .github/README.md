@@ -71,7 +71,7 @@ Here are the assumptions we worked on in Method 1:
 Here's how the word parsing goes:
 Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 
-**More cryptogram analysis algorithms will be added soon**
+> :warning:**More cryptogram analysis algorithms will be added soon**
 
 <br />
 
