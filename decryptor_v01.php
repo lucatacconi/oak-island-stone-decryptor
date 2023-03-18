@@ -408,7 +408,7 @@ $aRESULTs['elapsed_time'] = sprintf('%0.2f', $timediff);
 
 
 if($start_by == 'BATCH' || $params['LOG_FILE'] == 'Y'){
-    $logfile = fopen('./results/outcome.log', 'w') or die("Unable to open log file!");
+    $logfile = fopen('./results/outcome_'.$params['LANGUAGE'].'.log', 'w') or die("Unable to open log file!");
     fwrite($logfile, json_encode($aRESULTs));
     fclose($logfile);
 }
