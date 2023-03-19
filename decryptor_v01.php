@@ -37,6 +37,8 @@ if(!empty($log_file['log_file'])){
 }
 
 
+$aPHRASEs = [];
+
 $aRESULTs = [];
 $aRESULTs['status'] = 'OK';
 $aRESULTs['start_by'] = $start_by;
@@ -153,8 +155,6 @@ try {
 
     //For the values ​​that I consider numeric I assign a random number of 1 character at will
 
-
-    $aPHRASEs = [];
 
     if($params['CHECK_ONLY_DICTIONARY'] == 'Y'){
         //I check only the dictionary

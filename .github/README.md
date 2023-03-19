@@ -77,7 +77,7 @@ Word2 → Word4 → Word7 → Word1 → Word3 → Word5 → Word8 → Word6
 
 ## System Requirements
 
-* PHP 7.4 or newer if you want to use the PHP version
+* PHP 7.4 or newer if you want to use the PHP version + php-mbstring module
 * Lua 5.3 or newer if you want to use the Lua version
 * Dart 2.12 or newer if you want to use the Dart version
 * Apache or Nginx server if you want to use application by web browser
